@@ -6,26 +6,28 @@ input.addEventListener("input", (event) => {
     input.maxLength = "000.000.000-00".length
     
     if (ipt.value != null) {
-        if (!Utils.cpfIsValid(ipt.value)) {
-            (ipt.style.color = "red")
-            if (ipt.value.replace(".", "").length > "00".length && ipt.value.length < "000.".length) {
-                ipt.value = ipt.value + "."
-            }
-            if (ipt.value.length <= "000".length ){
-                ipt.value = ipt.value.replace(".", "")
-            }
-            if (ipt.value.length <= "000.000.000-".length) {
-                ipt.value = ipt.value.replace("-", "")
-            }
-            if (ipt.value.length > "000.00".length && ipt.value.length < "000.000.".length) {
-                ipt.value = ipt.value + "."
-            }
-            if (ipt.value.length > "000.000.00".length && ipt.value.length < "000.000.000-".length) {
-                ipt.value = ipt.value + "-"
-            }
-        } else {
-            (ipt.style.color = "")
-        }
+        (ipt.style.color = "red")
+    } else {
+        (ipt.style.color = "")
     }
-    // ipt.style.borderStyle = "none" 
+    if (!Utils.cpfIsValid(ipt.value)) {
+        (ipt.style.color = "red")
+    }else{
+        ipt.style.borderStyle = "none" 
+    }
+    if (ipt.value.replace(".", "").length > "00".length && ipt.value.length < "000.".length) {
+        ipt.value = ipt.value + "."
+    }
+    if (ipt.value.length <= "000".length ){
+        ipt.value = ipt.value.replace(".", "")
+    }
+    if (ipt.value.length <= "000.000.000-".length) {
+        ipt.value = ipt.value.replace("-", "")
+    }
+    if (ipt.value.length > "000.00".length && ipt.value.length < "000.000.".length) {
+        ipt.value = ipt.value + "."
+    }
+    if (ipt.value.length > "000.000.00".length && ipt.value.length < "000.000.000-".length) {
+        ipt.value = ipt.value + "-"
+    }
 })
