@@ -13,7 +13,7 @@ input.addEventListener("input", (event) => {
     if (!Utils.cpfIsValid(ipt.value)) {
         (ipt.style.color = "red")
     }else{
-        ipt.style.borderStyle = "none" 
+        ipt.style.color = "" 
     }
     if (ipt.value.replace(".", "").length > "00".length && ipt.value.length < "000.".length) {
         ipt.value = ipt.value + "."
